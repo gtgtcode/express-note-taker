@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"
+    ></script>
+    <title>Note Taker</title>
+  </head>
+  <body>
+    asdasda
+    <form action="/" method="post" class="text-center mt-10">
+      <input
+        type="text"
+        id="note-title"
+        name="noteTitle"
+        placeholder="Note Title"
+        class="p-4 border rounded-[40px]"
+      />
+      <br />
+      <input
+        type="text"
+        id="note-content"
+        name="noteContent"
+        placeholder="Note Content"
+        class="p-4 border rounded-[40px] mt-4 pb-[200px]"
+      />
+      <br />
+      <button
+        type="submit"
+        class="mt-4 border p-4 rounded-[40px] bg-orange-700 text-white"
+      >
+        Submit
+      </button>
+    </form>
+    {{#each notesArray}}
+      <div class="container mx-auto">
+        <div class="p-6 border rounded-[40px] mt-4 container mx-auto">
+          {{#each this}}
+            {{#if @index}}
+              <p>Note Content: {{this}}</p>
+            {{else}}
+              <p>Note Title: {{this}}</p>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+
+  </body>
+</html>

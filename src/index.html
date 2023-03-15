@@ -4,20 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../dist/output.css" rel="stylesheet" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script>
+      // compile the template
+      var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+      // execute the compiled template and print the output to the console
+      console.log(template({ doesWhat: "rocks!" }));
+    </script>
     <title>Note Taker</title>
   </head>
-  <body style="background-image: url(./assets/images/cork-board.jfif)">
-    <div class="container bg-white w-1/4 p-6 mt-10 ml-10 rounded relative">
-      asdasdasdasdasd
-      <img
-        src="./assets/images/pushpin.png"
-        class="absolute h-[50px] left-1/2 -top-3"
-        height="50"
+  <body>
+    <form action="/" method="post" class="text-center mt-10">
+      <input
+        type="text"
+        id="note-title"
+        name="noteTitle"
+        placeholder="Note Title"
+        class="p-4 border rounded-[40px]"
       />
-    </div>
-    <form action="/test" method="post">
-      <button type="submit">Submit</button>
+      <br />
+      <input
+        type="text"
+        id="note-content"
+        name="noteContent"
+        placeholder="Note Content"
+        class="p-4 border rounded-[40px] mt-4 pb-[200px]"
+      />
+      <br />
+      <button
+        type="submit"
+        class="mt-4 border p-4 rounded-[40px] bg-orange-700 text-white"
+      >
+        Submit
+      </button>
     </form>
   </body>
 </html>
