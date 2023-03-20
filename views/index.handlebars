@@ -1,0 +1,16 @@
+{{#each notesArray}}
+  <div class="container mx-auto">
+    <div class="p-6 border rounded-[40px] mt-4 container mx-auto">
+      {{#each this}}
+        {{#if @index}}
+          <p>Note Content: {{this}}</p>
+        {{else}}
+          <p>Note Title: {{this}}</p>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+{{/each}}
+<div style="position: absolute; bottom: 20px; left: 20px;">
+  <a href="/new"><button class="rounded-[999px] border p-4">+ New Post</button></a>
+</div>
